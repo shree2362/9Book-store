@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>BOOKS-blog</title>
+<link rel="stylesheet" type="text/css" href="blog.css">
+<link rel="shortcut icon" href="images/book.ico">
+</head>
+<body class="no-touch">
+<h1><a href="index.html">9BOOKS BLOG</a></h1>
+<div class="wrap">
+    
+  <a href="http://www.awwwards.com/7-essential-books-on-responsive-web-design-you-do-not-want-to-miss.html">
+  <div class="post shadow">
+    <div class="postInner">
+      <img src="images/responsive-web.avif" /><br>
+      <div class="titleBox">programming</div>
+	  <p>7 Essential Books on Responsive Web Design</p>
+	  
+    </div>
+  </div>
+  <a href="http://www.lifehack.org/articles/productivity/10-books-that-bill-gates-wants-you-read-become-successful-him.html">
+  <div class="post shadow">
+    <div class="postInner">
+      <img src="images/bill-gates.jpg" />
+	  <p>10 Books That Bill Gates Wants You to Read to Become as Successful as Him</p>
+      <div class="titleBox">self-improvment</div>
+    </div>
+  </div>
+  </a>
+  <a href="http://www.lifehack.org/articles/lifestyle/25-essential-books-that-every-college-student-should-read.html">
+  <div class="post shadow">
+    <div class="postInner">
+      <img src="images/girl-read.webp" />
+      <div class="titleBox">self-improvment</div>
+	  <p>25 Essential Books That Every College Student Should Read</p>
+    </div>
+  </div>
+  </a>
+  <a href="http://www.lifehack.org/articles/lifestyle/10-benefits-reading-why-you-should-read-everyday.html">
+  <div class="post shadow">
+    <div class="postInner">
+      <img src="images/lifesytle.avif" />
+      <div class="titleBox">Life-style</div>
+	  <p>10 Benefits of Reading: Why You Should Read Every Day</p>
+    </div>
+  </div>
+  </a>
+  <a href="http://www.lifehack.org/articles/lifestyle/ten-advantages-book-readers.html">
+  <div class="post shadow">
+    <div class="postInner">
+      <img src="images/eread.avif" />
+      <div class="titleBox">life-style</div>
+	  <p>Ten Advantages of E-book Readers</p>
+    </div>
+  </div>
+  </a>
+    </div>
+  </div>
+  </a>
+</div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+$(function(){
+   // See if this is a touch device
+   if ('ontouchstart' in window)
+   {
+      // Set the correct [touchscreen] body class
+      $('body').removeClass('no-touch').addClass('touch');
+     
+      // Add the touch toggle to show text when tapped
+      $('div.boxInner img').click(function(){
+         $(this).closest('.boxInner').toggleClass('touchFocus');
+      });
+   }
+});
+</script>
+</body>
+</html>

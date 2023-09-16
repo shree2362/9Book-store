@@ -1,0 +1,140 @@
+
+
+
+
+
+.lighter-text {
+  color: #ABB0BE;
+}
+
+.main-color-text {
+  color: #6394F8;
+}
+.containr {
+  margin-left:70% ;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: none;
+  z-index: 2;
+}
+
+.containr nav {
+
+  padding: 20px 0 40px 0;
+  background: #F8F8F8;
+  font-size: 16px;
+  
+}
+
+
+.navbar-left {
+  float: left;
+}
+.navbar-right {
+  float: right;
+}
+.containr nav ul li {
+  display: inline;
+  padding-left: 20px;
+}
+.containr nav ul li a {
+  color: #777777;
+  text-decoration: none;
+}
+.containr nav ul li a:hover {
+  color: black;
+}
+
+
+
+.badge {
+  background-color: blue;
+  border-radius: 10px;
+  color: white;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1;
+  padding: 3px 7px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.shopping-cart {
+  margin: 20px 0;
+  float: right;
+  background: rgb(48, 48, 48);
+  width: 280px;
+  position: absolute;
+  border-radius: 3px;
+  padding: 5px;
+  z-index: 1;
+  opacity: 0.9;
+}
+.shopping-cart .shopping-cart-header {
+  border-bottom: 1px solid #E8E8E8;
+  padding-bottom: 15px;
+}
+.shopping-cart .shopping-cart-header .shopping-cart-total {
+  float: right;
+}
+.shopping-cart .shopping-cart-items {
+  padding-top: 20px;
+}
+.shopping-cart .shopping-cart-items li {
+  margin-bottom: 18px;
+  list-style-type: none;
+}
+.shopping-cart .shopping-cart-items img {
+  width: 75px;
+  height: 85px;
+  float: left;
+  margin-right: 5px;
+  clear: left;
+ 
+}
+.shopping-cart .shopping-cart-items .item-name {
+  
+  display: block;
+  padding-top: 10px;
+  font-size: 16px;
+  color:#fff;
+}
+.shopping-cart .shopping-cart-items .item-price {
+  color: #6394F8;
+  margin-right: 8px;
+
+}
+.shopping-cart .shopping-cart-items .item-quantity {
+  color: #ABB0BE;
+  z-index: 5;
+}
+
+
+.cart-icon {
+  color: #515783;
+  font-size: 24px;
+  margin-right: 7px;
+  float: left;
+}
+
+.button {
+  background: #6394F8;
+  color: white;
+   width: 240px;
+  text-align: center;
+  padding: 10px 8px;
+  text-decoration: none;
+  display: block;
+  border-radius: 3px;
+  font-size: 16px;
+  margin: 25px 0 15px 12px;
+}
+.button:hover {
+  background: #729ef9;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}

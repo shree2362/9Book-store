@@ -1,0 +1,78 @@
+body {
+   margin: 0;
+   padding: 0;
+   background:lightblue;
+   font: sans-serif;
+   
+   text-align:center;
+}
+.wrap {
+   overflow: hidden;
+   margin: 30px;
+}
+.post {
+   float: left;
+   position: relative;
+   width: 25%;
+   padding-bottom: 30%;
+}
+.postInner {
+   position: absolute;
+   background:red;
+   color:#fff;
+   left: 10px;
+   right: 10px;
+   top: 20px;
+   bottom: 10px;
+   overflow: hidden;
+}
+.postInner img {
+   width: 100%;
+   height:70%;
+}
+.postInner .titleBox {
+   position: absolute;
+   bottom: 0px;
+   left: 0;
+   right: 0;
+   margin-bottom: -120px;
+   background: #000;
+   background: rgba(0, 0, 0, 0.5);
+   color: #FFF;
+   padding: 45px;
+   text-align: center;
+   -webkit-transition: all 0.3s ease-out;
+   transition: all 0.3s ease-out;
+}
+
+body.no-touch .postInner:hover .titleBox, body.touch .postInner.touchFocus .titleBox {
+   margin-bottom: 0;
+}
+/*.shadow{
+   box-shadow:5px 5px 5px #888888;
+   }*/
+
+@media only screen and (max-width : 480px) {
+   .post{
+      width: 100%;
+      padding-bottom: 100%;
+   }
+}
+@media only screen and (max-width : 650px) and (min-width : 481px) {
+    .post{
+      width: 50%;
+      padding-bottom: 50%;
+   }
+}
+@media only screen and (max-width : 1050px) and (min-width : 651px) {
+     .post{
+      width: 33.3%;
+      padding-bottom: 33.3%;
+   }
+}
+@media only screen and (max-width : 1290px) and (min-width : 1051px) {
+      .post{
+      width: 25%;
+      padding-bottom: 25%;
+   }
+}

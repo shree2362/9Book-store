@@ -1,0 +1,49 @@
+<pages>
+	<link>
+		<title>you can win</title>
+		<url>categories.php?cat_id=6&amp;cat_name=Self-help</url>
+	</link>
+	<link>
+		<title>Bake Wise</title>
+		<url>categories.php?cat_id=9&amp;cat_name=cooking</url>
+	</link>
+	<link>
+		<title>half-girlfriend</title>
+		<url>categories.php?cat_id=9&amp;cat_name=cooking</url>
+	</link>
+	<link>
+		<title>Golden lion</title>
+		<url>categories.php?cat_id=9&amp;cat_name=cooking</url>
+	</link>
+	<link>
+		<title>The Secret Of The Nagas</title>
+		<url>viewproduct.php?book_id=14</url>
+	</link>
+	<link>
+		<title> Hari Nayak</title>
+		<url>categories.php?cat_id=9&amp;cat_name=cooking</url>
+	</link><link>
+		<title>Death of a Salesman</title>
+		<url>viewproduct.php?book_id=18</url>
+	</link>
+	<link>
+		<title>The-secret by by Rhonda Byrne</title>
+		<url>viewproduct.php?book_id=2</url>
+	</link>
+	<link>
+		<title>The 7 Habits of Highly Effective People</title>
+		<url>viewproduct.php?book_id=3</url>
+	</link>
+	<link>
+		<title>The Success Principles</title>
+		<url>viewproduct.php?book_id=9</url>
+	</link>
+   <link>
+		<title>Auldery by Paulo Coelho</title>
+		<url>viewproduct.php?book_id=9</url>
+	</link>
+	<link>
+		<title>Think And Grow Rich</title>
+		<url>viewproduct.php?book_id=5</url>
+	</link>
+</pages>

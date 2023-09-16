@@ -1,0 +1,237 @@
+* {margin: 0; padding: 0;}
+
+html, body {min-height: 100%;}
+
+body {
+	text-align: center;
+	
+	background: #d9d9d9;
+	
+	font-family: 'Merriweather Sans', arial, verdana;
+}
+#wrapper{
+     min-height:100%;
+     position:relative;
+
+ }
+header{
+  width: 96.5%;
+    height:50px;
+    background-color:#395693;
+    color:white;
+    padding:0px 5px 15px 40px ;
+    margin-bottom: 10px;
+    display: inline-block;
+    overflow: hidden;
+    
+  }
+  header h1 {
+  float: left;
+  
+}
+header h1 a{
+  text-decoration: none;
+  color: #fff;
+}
+header h1 img{
+  width: 30px;
+  height: 30px;
+  padding:2px 5px 0px 5px;
+}
+input[type="email"]{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    clear:left;
+    box-sizing: border-box;
+}
+input[type="text"]
+{
+	width: 50%;
+    padding: 10px 10px;
+    display: block;
+    border-radius: 5px;
+    margin: 2px 10px 0px 20px;
+    font-size: 16px;
+}
+label{float:left;margin: 20px 10px 10px 30px;}
+.breadcrumb {
+	/*centering*/
+	display: inline-block;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.35);
+	overflow: hidden;
+	border-radius: 5px;
+	/*Lets add the numbers for each link using CSS counters. flag is the name of the counter. to be defined using counter-reset in the parent element of the links*/
+	counter-reset: flag; 
+}
+
+.breadcrumb a {
+	text-decoration: none;
+	outline: none;
+	display: block;
+	float: left;
+	font-size: 18px;
+	line-height: 42px;
+	color: white;
+	/*need more margin on the left of links to accomodate the numbers*/
+	padding: 0 10px 0 60px;
+	background: #666;
+	background: linear-gradient(#666, #333);
+	position: relative;
+}
+/*since the first link does not have a triangle before it we can reduce the left padding to make it look consistent with other links*/
+.breadcrumb a:first-child {
+	padding-left: 46px;
+	border-radius: 5px 0 0 5px; /*to match with the parent's radius*/
+}
+.breadcrumb a:first-child:before {
+	left: 14px;
+}
+.breadcrumb a:last-child {
+	border-radius: 0 5px 5px 0; /*this was to prevent glitches on hover*/
+	padding-right: 20px;
+}
+
+/*hover/active styles*/
+.breadcrumb a.active, .breadcrumb a:hover{
+	background: #333;
+	background: linear-gradient(#333, #000);
+}
+.breadcrumb a.active:after, .breadcrumb a:hover:after {
+	background: #333;
+	background: linear-gradient(135deg, #333, #000);
+}
+
+/*adding the arrows for the breadcrumbs using rotated pseudo elements*/
+.breadcrumb a:after {
+	content: '';
+	position: absolute;
+	top: 0; 
+	right: -21px; /*half of square's length*/
+	/*same dimension as the line-height of .breadcrumb a */
+	width: 42px; 
+	height: 42px;
+	/*as you see the rotated square takes a larger height. which makes it tough to position it properly. So we are going to scale it down so that the diagonals become equal to the line-height of the link. We scale it to 70.7% because if square's: 
+	length = 1; diagonal = (1^2 + 1^2)^0.5 = 1.414 (pythagoras theorem)
+	if diagonal required = 1; length = 1/1.414 = 0.707*/
+	transform: scale(0.707) rotate(45deg);
+	/*we need to prevent the arrows from getting buried under the next link*/
+	z-index: 1;
+	/*background same as links but the gradient will be rotated to compensate with the transform applied*/
+	background: #666;
+	background: linear-gradient(135deg, #666, #333);
+	/*stylish arrow design using box shadow*/
+	box-shadow: 
+		2px -2px 0 2px rgba(0, 0, 0, 0.4), 
+		3px -3px 0 2px rgba(255, 255, 255, 0.1);
+	/*
+		5px - for rounded arrows and 
+		50px - to prevent hover glitches on the border created using shadows*/
+	border-radius: 0 5px 0 50px;
+}
+/*we dont need an arrow after the last link*/
+.breadcrumb a:last-child:after {
+	content: none;
+}
+/*we will use the :before element to show numbers*/
+.breadcrumb a:before {
+	content: counter(flag);
+	counter-increment: flag;
+	/*some styles now*/
+	border-radius: 100%;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	margin: 8px 0;
+	position: absolute;
+	top: 0;
+	left: 30px;
+	background: #444;
+	background: linear-gradient(#444, #222);
+	font-weight: bold;
+}
+
+
+.flat a, .flat a:after {
+	background: green;
+	color: black;
+	transition: all 0.5s;
+}
+.flat a:before {
+	background: green;
+	box-shadow: 0 0 0 1px #ccc;
+}
+.flat a:hover, .flat a.active, 
+.flat a:hover:after, .flat a.active:after{
+	background: #9EEB62;
+}
+.main {
+  min-width: 320px;
+  max-width: 800px;
+  min-height:400px;
+  overflow:hidden;
+  padding:0px 10px 10px 10px;
+
+  margin:40px auto;
+  background: #fff;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.myButton2{
+    
+  box-shadow:inset 0px 0px 0px 0px #cf866c;
+  background:linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
+  
+  background-color:#d0451b;
+ border-radius:4px;
+  border:1px solid #942911;
+   display:block;
+   float:right;
+   clear:left;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:22px;
+  padding:9px 40px;
+  margin: 20px 30px 10px 10px;
+  text-decoration:none;
+  text-shadow:0px 0px 0px #854629;
+}
+.myButton2:hover {
+  
+  background:linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
+  background-color:#bc3315;
+}
+.myButton2:active {
+  position:relative;
+  top:1px;
+}
+.chk-paym{
+
+display:inline-block;
+width:30%;
+height:350px;
+margin-bottom:20px;
+background:grey;
+}
+
+.chk-paym ul{
+display:block;}
+
+.chk-paym ul li{
+height:30px;
+text-align:center;
+padding:20px;
+display:block;
+background:#e6e6e6;
+border-bottom:1px solid grey;
+font-size:18px;
+}
+.chk-paym ul li:hover{
+background:#cccccc;
+}
+.chk-paym ul li a{text-decoration:none;
+color:black;
+font-weight: 200px;}
