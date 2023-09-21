@@ -19,7 +19,7 @@ html, body{
 }
 .section{
     white-space:pre-wrap;
-    background:url("images/girl-reading-book.avif") no-repeat center ;
+    background:url("images/girl-reading-book.jpg") no-repeat center ;
 	background-size:cover;
     height:100%;
     width:100%;
@@ -83,7 +83,7 @@ div.xbox
 .section2 #arrow2{position:relative;padding-bottom:50px;left:49%}
 .section3{
     /*white-space:pre-wrap;*/
-    background:url("images/classroom.avif") no-repeat center fixed;
+    background:url("images/classroom.jpeg") no-repeat center fixed;
     background-size:cover;
     height:100%;
     width:100%;
