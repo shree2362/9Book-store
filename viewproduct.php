@@ -30,8 +30,6 @@ extract($row);
 <link rel="stylesheet" type="text/css" href="viewprod.css">
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="shortcut icon" href="images\book.ico">
-<script src='jquery-1.8.3.min.js'></script>
-  <script src='jquery.elevatezoom.js'></script>
 </head>
 <body>
 <div id="container">
@@ -54,102 +52,7 @@ extract($row);
          </div>
     </div>
   </header>
-
-
-  <div class="side">
-      <div class="pos">
-  	     <img id="zoom_01" src="images/<?php echo $id; ?>.jpg" data-zoom-image="images/<?php echo $id; ?>.jpg"/>
-      </div>
-
-     <div class="posi">
-        <h1 class="title"><?php echo $book_title; ?></h1><hr>
-        <p><b style="color:#737373; font-weight:bold;font-size:15px;">Author: </b><?php echo $book_author; ?></p><hr>
-      <div style="width:40%;padding-right:30px;border-right:1px groove;height: 180px;display: inline-block;float:left;">
-        <p>Deal Price:<b style="font-weight:500;color:#666666;">Rs. <?php echo $book_price; ?></b></p>
-
-        <form method="post" action="update_cart.php">
-          <div style="display:block;">
-              <input type="hidden" name="book_id" value="<?php echo $id; ?>"/>
-              <label for="qty">Quantity:</label>
-            <?php
-              echo '<input type="hidden" name="redirect" value="viewproduct.php?book_id=',$id,'"/>';
-               $session=session_id();
-               $sql='SELECT item_qty FROM shopper_track WHERE session_id="'.$session.'" AND item_id="'.$id.'" ';
-               $result=mysqli_query($conn,$sql);
-              if(mysqli_num_rows($result) > 0)
-               {
-                 $row=mysqli_fetch_assoc($result);
-                 extract($row);}
-              else{
-                $item_qty=0;
-                  }
-              mysqli_free_result($result);
-             echo '<input type="text" name="qty" id="qty"  maxlength="2" szie="2" style="width: 50px;" value="'.$item_qty.'"/>';
-          /*if($item_qty>0)
-          {
-            echo '<input class="myButton"type="submit" name="submit" value="Change Qty" />';
-          }
-          else{*/
-              echo '<input class="myButton" type="submit" name="submit" style="margin-top:5px;" value="Add to Cart" />'; //}
-             ?>
-          </div>
-        </form>
-          <!--  <input class="myButton" style="background:linear-gradient(to bottom, #7fbf4d 5%, #7fbf4d 100%);background-color:#7fbf4d;"type="submit" name="submit" value='Buy Now' />-->
-         
-     </div>
-
-       <div class="posi2">
-            <p>Available only:<br><b style="font-weight:500;color:#666666;">CASH ON DELIVERY</b></p>
-       </div>
-       
- </div>
- <hr style="width:100%;border:1px solid black;">
-     <div id="desc">
-      <h3>Summary of The Book</h3>
-      <p><?php echo $book_desc; ?></p>
-     </div>
-  <div class="stars">
-    <p>Have used this book?</p>
-    <p>Rate the Book</p>
-<form action="">
-  <input class="star" id="star-1" type="radio" name="star"/>
-  <label class="star" for="star-1"></label>
-  <input class="star" id="star-2" type="radio" name="star"/>
-  <label class="star" for="star-2"></label>
-  <input class="star" id="star-3" type="radio" name="star"/>
-  <label class="star" for="star-3"></label>
-  <input class="star" id="star-4" type="radio" name="star"/>
-  <label class="star" for="star-4"></label>
-  <input class="star" id="star-5" type="radio" name="star"/>
-  <label class="star" for="star-5"></label>
-</form>
-<a href="review.php?book_id=<?php echo $id; ?>" style="display:block;clear:right;">write review</a>
-</div>
-<hr style="width:100%;border:1px solid black;">
-  <?php
-  $query="SELECT * FROM reviews WHERE review_book_id='".$id."'";
-  $res=mysqli_query($conn,$query);
-  echo '<h3>Reviews of ', $book_title,'<h3>';
-  while($ro= mysqli_fetch_array($res))
-        {
-            extract($ro);
-            echo '<h3>',$review_title,'</h3>
-                  <p>',$review_com,'</p>';
-
-        }
-  ?>
-</div>
-<footer>
-  <div class="divfoot">
-  <h2>9BOOKS</h2>
-  <p>Copyright &copy 2016 9books. All rights reserved.</p>
-    <p><a href="#">Terms of Service</a> | <a href="#">Privacy</a></p>
-  </div>
-</footer>
-</div>
-
-
-<div class="containr" id="panel">
+  <div class="containr" id="panel">
   <div class="shopping-cart">
     <?php
        $session=session_id();
@@ -193,12 +96,84 @@ extract($row);
        ?>
     </ul>
 
-    <a href="#" class="button">Checkout</a>
+    <a href="checkout.php" class="button">Checkout</a>
+    <?php } ?>
   </div> 
-  <?php } ?>
+  
 </div> 
 
+  <div class="side">
+      <div class="pos">
+  	     <img id="zoom_01" src="images/<?php echo $id; ?>.jpg" data-zoom-image="images/<?php echo $id; ?>.jpg"/>
+      </div>
 
+     <div class="posi">
+        <h1 class="title"><?php echo $book_title; ?></h1><hr>
+        <p><b style="color:#737373; font-weight:bold;font-size:15px;">Author: </b><?php echo $book_author; ?></p><hr>
+      <div style="width:40%;padding-right:30px;border-right:1px groove;height: 180px;display: inline-block;float:left;">
+        <p>Deal Price:<b style="font-weight:500;color:#666666;">Rs. <?php echo $book_price; ?></b></p>
+
+        <form method="post" action="update_cart.php">
+          <div style="display:block;">
+              <input type="hidden" name="book_id" value="<?php echo $id; ?>"/>
+              <label for="qty">Quantity:</label>
+            <?php
+              echo '<input type="hidden" name="redirect" value="viewproduct.php?book_id=',$id,'"/>';
+                $item_qty=1;
+             echo '<input type="text" name="qty" id="qty"  maxlength="2" szie="2" style="width: 50px;" value="'.$item_qty.'"/>';
+              echo '<input class="myButton" type="submit" name="submit" style="margin-top:5px;" value="Add to Cart" />'; //}
+             ?>
+          </div>
+        </form>
+     </div>
+       <div class="posi2">
+            <p>Available only:<br><b style="font-weight:500;color:#666666;">CASH ON DELIVERY</b></p>
+       </div>
+       
+ </div>
+ <hr style="width:100%;border:1px solid black;">
+     <div id="desc">
+      <h3>Summary of The Book</h3>
+      <p><?php echo $book_desc; ?></p>
+     </div>
+  <div class="stars">
+    <p>Have used this book? Rate the Book</p>
+<form action="">
+  <input class="star" id="star-1" type="radio" name="star"/>
+  <label class="star" for="star-1"></label>
+  <input class="star" id="star-2" type="radio" name="star"/>
+  <label class="star" for="star-2"></label>
+  <input class="star" id="star-3" type="radio" name="star"/>
+  <label class="star" for="star-3"></label>
+  <input class="star" id="star-4" type="radio" name="star"/>
+  <label class="star" for="star-4"></label>
+  <input class="star" id="star-5" type="radio" name="star"/>
+  <label class="star" for="star-5"></label>
+</form>
+<a href="review.php?book_id=<?php echo $id; ?>" style="display:block;clear:right;">write review</a>
+</div>
+<hr style="width:100%;border:1px solid black;">
+  <?php
+  $query="SELECT * FROM reviews WHERE review_book_id='".$id."'";
+  $res=mysqli_query($conn,$query);
+  echo '<h3>Reviews of ', $book_title,'<h3>';
+  while($ro= mysqli_fetch_array($res))
+        {
+            extract($ro);
+            echo '<h3>',$review_title,'</h3>
+                  <p>',$review_com,'</p>';
+
+        }
+  ?>
+</div>
+<footer>
+  <div class="divfoot">
+  <h2>9BOOKS</h2>
+  <p>Copyright &copy 2016 9books. All rights reserved.</p>
+    <p><a href="#">Terms of Service</a> | <a href="#">Privacy</a></p>
+  </div>
+</footer>
+</div>
 <script>
 var count=0;
 function myFunction() {

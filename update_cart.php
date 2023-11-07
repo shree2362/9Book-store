@@ -6,7 +6,7 @@ $session=session_id();
 $qty=(isset($_POST['qty']) && ctype_digit($_POST['qty'])) ? $_POST['qty'] : 0;
 $item_id=(isset($_POST['book_id'])) ? $_POST['book_id'] : '';
 $action=(isset($_POST['submit'])) ? $_POST['submit'] : '';
-$redirect = (isset($_POST['redirect'])) ? $_POST['redirect'] : 'categories.php';
+$redirect = (isset($_POST['redirect'])) ? $_POST['redirect'] : 'categories.php?cat_id=1&cat_name=Pre-orders';
 
 switch($action)
 {

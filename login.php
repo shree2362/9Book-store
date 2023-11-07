@@ -9,11 +9,12 @@
 session_start();
 include('db.php');
 $msg='';
+$email='';
 if( isset($_SESSION['user']) != "")
 
 {
 
-      header("Location: categories.php");
+      header("Location: categories.php?cat_id=1&cat_name=Pre-orders");
 }
 if (isset($_POST['login']) && !empty($_POST['email']) 
                && !empty($_POST['password']))
@@ -33,35 +34,29 @@ if (isset($_POST['login']) && !empty($_POST['email'])
       {
             $_SESSION['user'] = $row['id'];
         header("Location: categories.php?cat_id=1&cat_name=Pre-orders");
-        
       }
       else
-      {
-                   
-                $msg="Invalid username or password";
-                        
+      {      
+       $msg="Invalid username or password";
+        $email= $_POST['email'];                
       }
 }
 
 ?>
 
 <div style="margin-top:40px">
-<h1 style=text-decoration:none;text-align:center><a href="index.html">Welcome to <span style=color:red;>9books </span></a></h1>
+<h1><a href="index.html">Welcome to <span style=color:red;>9books </span></a></h1>
 <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
   <h4 style="color:red"><?php echo $msg; ?></h4>
-  <h2>Login</h2>
-  
+  <h1>Login<h1>
   <label>
-    <input type="email" name="email" placeholder="Email" required>
-    <span>Email</span>
+    <input type="email" name="email" value="<?php echo $email; ?>" placeholder="Email" required>
   </label>
-  
   <label>
     <input type="password" name="password" placeholder="Password" required>
-    <span>Password</span>
   </label>
-	
-  <input type="submit" name="login" >
+  <input type="submit" name="login" value="Submit" >
+  <h2>Create an account...! <a href="sign-in form.html"> Sign Up </a> </h2>
   
 </form>
 </div>

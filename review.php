@@ -25,7 +25,7 @@ $userRow=mysqli_fetch_array($res);
 	<div id="container">
   <header>
 	<div class="wrapper">
-     <h1><a href="categories.php"><img src="images/book.ico"/>9BOOKS</a></h1>
+     <h1><a href="categories.php?cat_id=1&cat_name=Pre-orders"><img src="images/book.ico"/>9BOOKS</a></h1>
      
       <div class="dropdown">
         <button class="dropbtn"><?php echo $userRow['Name']; ?>'s Account</button>

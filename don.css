@@ -1,7 +1,7 @@
 html,body {
   
   margin:0px;
-  width: 100%
+  width: 100%;
   min-height:100%;
    position:relative;
 	background-color: #fff;
@@ -107,13 +107,13 @@ nav{
   float:left;
   margin-top: 20px;
   margin-left: 20px;
-  border-radius: 15px 15px 0px 0px;
+  border-radius: 15px;
 }
 
 nav ul {
   
     list-style-type: none;
-    
+    border-radius: 15px;
     margin: 0;
     padding: 0;
     overflow: hidden;

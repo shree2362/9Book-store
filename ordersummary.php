@@ -2,15 +2,22 @@
 session_start();
 include('db.php');
 
-if(!isset($_SESSION['user']))
-{
- header("Location: login.php");
+if(!isset($_SESSION['user'])) {
+  header("Location: login.php");
 }
+
 $res=mysqli_query($conn,"SELECT * FROM users WHERE id='".$_SESSION['user']."' ");
-$userRow=mysqli_fetch_array($res);
+$userRow = mysqli_fetch_array($res);
+
+if ($userRow) {
+  $email = $userRow['email'];
+} else {
+  $email = "";
+}
 ?>
 <html>
 <head>
+<title>9BOOKS-Checkout</title>
 <link rel="stylesheet" type="text/css" href="checkout.css">
 <style>
 table, td, th {    
@@ -34,14 +41,14 @@ th, td {
 <body>
 	<header>
 		<div class="wrapper">
-			<h1><a href="categories.php"><img src="images/book.ico"/>9BOOKS</a></h1>
+			<h1><a href="categories.php?cat_id=1&cat_name=Pre-orders"><img src="images/book.ico"/>9BOOKS</a></h1>
 		</div></header>
 <div class="main">
   <div class="breadcrumb flat">
-	 <a href="checkout.php">Email</a>
-	 <a href="checkout2.php">Delivery Address</a>
-	 <a href="#" class="active">Order Summary</a>
-	 <a href="#">Payment Method</a>
+	 <a>Email</a>
+	 <a>Delivery Address</a>
+	 <a href="ordersummary.php" class="active">Order Summary</a>
+	 <a>Payment Method</a>
   </div>
   <?php
        $session=session_id();
@@ -79,11 +86,9 @@ th, td {
           <td>
             <form method='post' action="update_cart.php">
             <div>
-             <input type="text" name="qty"  maxlength="2" szie="2" style="width: 50px;" value="<?php echo $item_qty; ?>"/><br><br>
+             <input type="" name="qty"  maxlength="2" szie="2" style="width: 50px;" disabled value="<?php echo $item_qty; ?>"/><br><br>
              <input type="hidden" name="book_id" value="<?php echo $item_id ; ?>"/>
-             <input type="hidden" name="redirect" value="viewcart.php"/>
-             <input type="submit" name="submit" value="Change Qty" style="width:40px;font-size:10px;"/>
-            </div>
+             </div>
         </form>
         </td>
           <td>Rs. <?php echo number_format($book_price*$item_qty,2) ; ?></td>
@@ -105,8 +110,8 @@ th, td {
 	<input type="hidden"  name="state" value="<?php echo $_POST['state']; ?>"/>
 	<input type="hidden"  name="pin" value="<?php echo $_POST['pin']; ?>"/>
 	<input type="hidden"  name="tel" value="<?php echo $_POST['tel']; ?>"/>
-	<input type="hidden" name="email" value="<?php echo $_POST['email']; ?>"/>
-    
+  <input type="hidden" name="email" value="<?php echo $_POST['email']; ?>">
+  <input type="hidden" name="total" value="<?php echo number_format($total,2) ; ?>">
 	<input type="submit" class="myButton2" style="float:left;" value="Continue">
 	</form>
    </div>

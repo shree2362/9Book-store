@@ -7,7 +7,7 @@ if(!isset($_SESSION['user']))
 }
 else if(isset($_SESSION['user'])!="")
 {
- header("Location: categories.php");
+ header("Location: categories.php?cat_id=1&cat_name=Pre-orders");
 }
 
 if(isset($_GET['logout']))

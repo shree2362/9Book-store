@@ -1,43 +1,61 @@
-* {margin: 0; padding: 0;}
-
-html, body {min-height: 100%;}
-
+html,
 body {
-	text-align: center;
-	
-	background: #d9d9d9;
-	
-	font-family: 'Merriweather Sans', arial, verdana;
-}
-#wrapper{
-     min-height:100%;
-     position:relative;
 
- }
-header{
-  width: 96.5%;
-    height:50px;
-    background-color:#395693;
-    color:white;
-    padding:0px 5px 15px 40px ;
-    margin-bottom: 10px;
-    display: inline-block;
-    overflow: hidden;
-    
-  }
-  header h1 {
-  float: left;
+  margin: auto;
+  position: relative;
+  background-color: #fff;
+  color: black;
+  font: normal 15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+
+}
+
+#container {
+  min-height: 100%;
+  width: 100%;
+
+  overflow: hidden;
+}
+
+b {
+  font-size: 20px;
+}
+header {
+	width: 100%;
+	height: 50px;
+	background-color: #0f6cb2;
+	color: white;
+	padding: 0px 5px 15px 40px;
+	margin-bottom: 10px;
+	display: inline-block;
   
-}
-header h1 a{
-  text-decoration: none;
-  color: #fff;
-}
-header h1 img{
-  width: 30px;
-  height: 30px;
-  padding:2px 5px 0px 5px;
-}
+  }
+  
+  #wrapper {
+	min-height: 100%;
+	position: relative;
+  }
+  
+  header h1 {
+	float: left;
+  
+  }
+  
+  header h1 a {
+	text-decoration: none;
+	color: #fff;
+  }
+  
+  header h1 img {
+	width: 30px;
+	height: 30px;
+	padding: 2px 5px 0px 5px;
+  }
+  
+  header nav {
+	float: right;
+	padding: 0px;
+  
+  }
 input[type="email"]{
     width: 50%;
     padding: 12px 20px;
@@ -57,7 +75,70 @@ input[type="text"]
     margin: 2px 10px 0px 20px;
     font-size: 16px;
 }
-label{float:left;margin: 20px 10px 10px 30px;}
+
+h5 {
+  margin: 0;
+  color:red; 
+  text-align:center;
+}
+.form-container {
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+.form-container p {
+	margin-top: 30px;
+}
+
+/* Style for input fields */
+.form-container input[type="text"],
+.form-container select {
+	width: 100%;
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+}
+
+.form-container input[type="number"],
+.form-container select {
+	width: 100%;
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+}
+
+/* Style for error messages */
+.form-container .error-message {
+	color: red;
+	font-size: 14px;
+	margin-top: 5px;
+}
+
+/* Style for submit button */
+.form-container input[type="submit"] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+/* Style for submit button on hover */
+.form-container input[type="submit"]:hover {
+	background-color: #45a049;
+}
+
+label{
+	float:left;
+	margin: 20px 10px;
+}
+
 .breadcrumb {
 	/*centering*/
 	display: inline-block;
@@ -77,14 +158,14 @@ label{float:left;margin: 20px 10px 10px 30px;}
 	line-height: 42px;
 	color: white;
 	/*need more margin on the left of links to accomodate the numbers*/
-	padding: 0 10px 0 60px;
+	padding: 0 30px 0 60px;
 	background: #666;
 	background: linear-gradient(#666, #333);
 	position: relative;
 }
 /*since the first link does not have a triangle before it we can reduce the left padding to make it look consistent with other links*/
 .breadcrumb a:first-child {
-	padding-left: 46px;
+	padding-left: 65px;
 	border-radius: 5px 0 0 5px; /*to match with the parent's radius*/
 }
 .breadcrumb a:first-child:before {
@@ -145,10 +226,11 @@ label{float:left;margin: 20px 10px 10px 30px;}
 	width: 20px;
 	height: 20px;
 	line-height: 20px;
-	margin: 8px 0;
+	margin: 10px -3px;
 	position: absolute;
 	top: 0;
 	left: 30px;
+	padding-left: 9px;
 	background: #444;
 	background: linear-gradient(#444, #222);
 	font-weight: bold;
@@ -156,13 +238,12 @@ label{float:left;margin: 20px 10px 10px 30px;}
 
 
 .flat a, .flat a:after {
-	background: green;
+	background: rgb(86, 210, 86);
 	color: black;
 	transition: all 0.5s;
 }
 .flat a:before {
-	background: green;
-	box-shadow: 0 0 0 1px #ccc;
+	background: rgb(86, 210, 86);
 }
 .flat a:hover, .flat a.active, 
 .flat a:hover:after, .flat a.active:after{

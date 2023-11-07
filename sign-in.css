@@ -1,102 +1,92 @@
-body,html{
-  background-color: rgb(254, 242, 164);
+body,
+html {
+  background-color: rgb(229, 215, 124);
 }
 
-h2
-{
-  font: 20px Helvetica; 
+h2 {
+  text-align: center;
+  font: 17px Helvetica;
 }
-div{box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+
+div {
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 form {
+  width: 60%;
   display: table;
-  margin: 40px auto;
+  margin: 30px auto;
 }
+
 form label {
-  position: relative;
+  text-align: left;
   display: block;
 }
+
 form label input {
   font: 18px Helvetica, Arial, sans-serif;
+  align-items: center;
   box-sizing: border-box;
   display: block;
   border: none;
+  border-radius: 5px;
   padding: 20px;
-  width: 300px;
+  width: 100%;
+  margin-top: 10px;
   margin-bottom: 20px;
   font-size: 18px;
   outline: none;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
 }
-form label input::-webkit-input-placeholder {
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  color: #999;
-  font: 18px Helvetica, Arial, sans-serif;
-}
-form label input::-moz-placeholder {
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  color: #999;
-  font: 18px Helvetica, Arial, sans-serif;
-}
-form label input:-ms-input-placeholder {
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  color: #999;
-  font: 18px Helvetica, Arial, sans-serif;
-}
+
 form label input::placeholder {
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   color: #999;
   font: 18px Helvetica, Arial, sans-serif;
 }
-form label input:focus, form label input.populated {
-  padding-top: 28px;
-  padding-bottom: 12px;
-}
-form label input:focus::-webkit-input-placeholder, form label input.populated::-webkit-input-placeholder {
-  color: transparent;
-}
-form label input:focus::-moz-placeholder, form label input.populated::-moz-placeholder {
-  color: transparent;
-}
-form label input:focus:-ms-input-placeholder, form label input.populated:-ms-input-placeholder {
-  color: transparent;
-}
-form label input:focus::placeholder, form label input.populated::placeholder {
-  color: transparent;
-}
-form label input:focus + span, form label input.populated + span {
-  opacity: 1;
-  top: 10px;
-}
+
+
+
 form label span {
-  color: #35dc9b;
-  font: 13px Helvetica, Arial, sans-serif;
-  position: absolute;
-  top: 0px;
-  left: 20px;
-  opacity: 0;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  color: #000000;
+  font: 18px Helvetica, Arial, sans-serif;
+  font-weight: bold;
 }
+
 form input[type="submit"] {
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
   font: 18px Helvetica, Arial, sans-serif;
   border: none;
+  border-radius: 5px;
+  text-align: center;
   background: #1aaf75;
   color: #fff;
   padding: 16px 40px;
 }
+
 form input[type="submit"]:hover {
-  background: #109f67;
+  background: #0a7049;
 }
-div{
-margin:auto;
-width:40%;
- background-color:lightblue;
- padding:3px 10px;
+
+div {
+  margin: auto;
+  margin-top: 50px;
+  width: 35%;
+  background-color: rgb(165, 206, 220);
+  padding: 10px 10px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+}
+h1 a {
+  text-decoration: none;
+}
+
+.submitButton {
+  width: 50%;
+  margin: 0px 84px;
+}
+
+h2 {
+  font-weight: bold;
 }

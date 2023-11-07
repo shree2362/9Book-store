@@ -54,13 +54,13 @@ $userRow=mysqli_fetch_array($res);
    <button class="drop">Fiction</button>
         <div class="dropPanel rig">
           <ul >
-        	<li><a href="categories.php?cat_id=2&cat_name=Fiction->crime">crime</a></li>
-            <li><a href="categories.php?cat_id=4&cat_name=Fiction->drama">drama</a></li>
-            <li><a href="categories.php?cat_id=5&cat_name=Fiction->romance">romance</a></li>
+        	<li><a href="categories.php?cat_id=2&cat_name=Fiction->crime">Crime</a></li>
+            <li><a href="categories.php?cat_id=4&cat_name=Fiction->drama">Drama</a></li>
+            <li><a href="categories.php?cat_id=5&cat_name=Fiction->romance">Romance</a></li>
           </ul>
         </div>
    <li><a href="categories.php?cat_id=6&cat_name=Self-help">Self-help</a></li>
-   <li><a href="categories.php?cat_id=7&cat_name=programming">programming</a></li>
+   <li><a href="categories.php?cat_id=7&cat_name=programming">Programming</a></li>
         <script>
 var acc =document.getElementsByClassName("drop");
 var i;
@@ -111,16 +111,14 @@ count++;
   {
     extract($row);
     $avg=0;
-     echo '<div class="book-panel">
-        <div class="book-cover">
-            <a href="viewproduct.php?book_id=',$id,'"><img src="images/',$id,'.jpg" alt="images/book.ico" /></a>
-          </div>
-      <div class="btitle">
-            <a href="viewproduct.php?book_id=',$id,'" class="blink">',$book_title ,'</a> 
-      </div>
-      <div class="bauth">by '
-        , $book_author ,
-      '</div>';
+    echo '<div class="book-panel">
+    <div class="book-cover">
+        <a href="viewproduct.php?book_id=', $id, '"><img src="images/', $id, '.jpg" alt="images/book.ico" /></a>
+    </div>
+    <div class="btitle">
+        <a href="viewproduct.php?book_id=', $id, '" class="blink">', strlen($book_title) > 15 ? substr($book_title, 0, 15) . '...' : $book_title, '</a>
+    </div>
+    <div class="bauth">by ', $book_author, '</div>';
       $query="SELECT * FROM reviews WHERE review_book_id='".$id."'";
   $res=mysqli_query($conn,$query); 
   $numres=mysqli_num_rows($res);
