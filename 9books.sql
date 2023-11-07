@@ -194,8 +194,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `Name`, `email`, `password`) VALUES
-(3, 'venkat', 'venkatrsbv263@gmail.com', '44b94cbce80870c7e2f933b355457429'),
-(4, 'venkat', 'nani219319@gmail.com', '02ea2ae2a237c042285e093e6972eaa9');
+(3, 'bharagvi', 'bharagvi@gmail.com', '44b94cbce80870c7e2f933b355457429');
 
 --
 -- Indexes for dumped tables
