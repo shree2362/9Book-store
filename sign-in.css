@@ -1,6 +1,10 @@
-body,
-html {
-  background-color: rgb(229, 215, 124);
+body, html {
+  height: 100%;
+  background-image: url("images/kimberly-farmer-lUaaKCUANVI-unsplash.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h2 {
